@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Annabloome Ventures</title>
+  <style>
+    * {margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif;}
+    body {background: #fff; color: #222; line-height: 1.6;}
+
+    /* NAVIGATION */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 15px 5%; z-index: 1000;
+      background: rgba(0,0,0,0.4);
+    }
+    nav .logo {font-size: 1.5rem; font-weight: bold; color: white;}
+    nav ul {list-style: none; display: flex; gap: 20px;}
+    nav a {
+      text-decoration: none; color: white; font-weight: 600;
+      padding: 8px 16px; border-radius: 20px;
+      transition: 0.3s;
+    }
+    nav a:hover {background: #ffb6c1; color: black;}
+
+    /* HERO SLIDER */
+    header {height: 100vh; position: relative; overflow: hidden;}
+    .slider {height: 100%; width: 100%; position: relative;}
+    .slide {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      background-size: cover; background-position: center;
+      opacity: 0; transition: opacity 1s ease-in-out;
+    }
+    .slide.active {opacity: 1;}
+
+    /* Slider Controls */
+    .controls {
+      position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);
+      display: flex; gap: 10px;
+    }
+    .dot {
+      height: 12px; width: 12px; border-radius: 50%;
+      background: white; opacity: 0.6; cursor: pointer;
+    }
+    .dot.active {opacity: 1; background: #ffb6c1;}
+
+    .prev, .next {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      background: rgba(0,0,0,0.5); color: white;
+      border: none; font-size: 2rem; cursor: pointer;
+      padding: 5px 15px; border-radius: 50%;
+    }
+    .prev {left: 20px;} .next {right: 20px;}
+
+    /* Hero Content */
+    .hero-content {
+      position: absolute; top: 50%; left: 10%; transform: translateY(-50%);
+      color: white; max-width: 600px;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+    }
+    .hero-content h1 {font-size: 3rem; margin-bottom: 10px;}
+    .hero-content p {font-size: 1.2rem;}
+
+    /* Sections */
+    section {padding: 80px 5%;}
+    .about {display: flex; gap: 40px; align-items: center;}
+    .about img {width: 50%; border-radius: 12px;}
+    .services {
+      display: grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+      gap: 30px; text-align: center;
+    }
+    .services img {width: 100%; border-radius: 12px; margin-bottom: 15px;}
+
+    /* Testimonials */
+    .testimonial-section {
+      background: #f9f9f9; padding: 60px 5%; text-align: center;
+    }
+    .testimonial {
+      max-width: 600px; margin: 20px auto; background: white;
+      padding: 20px; border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    /* CTA */
+    .cta-section {
+      background: linear-gradient(to right,#ffb6c1,#ffd1dc);
+      text-align: center; padding: 60px 20px;
+    }
+    .cta-section a {
+      display: inline-block; margin-top: 15px;
+      background: #222; color: white; padding: 12px 25px;
+      border-radius: 25px; text-decoration: none; font-weight: bold;
+      transition: 0.3s;
+    }
+    .cta-section a:hover {background: #444;}
+
+    /* Footer */
+    footer {background: #111; color: #aaa; text-align: center; padding: 20px;}
+    
+    @media(max-width: 768px) {
+      .about {flex-direction: column;}
+      .hero-content h1 {font-size: 2rem;}
+      nav ul {flex-direction: column; gap: 10px; background: rgba(0,0,0,0.7); padding: 10px; border-radius: 10px;}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="logo">Annabloome Ventures</div>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#feedback">Feedback</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO SLIDER -->
+  <header id="home">
+    <div class="slider">
+      <div class="slide active" style="background-image: url('Images/Imageshero1.jpg.jpg');"></div>
+      <div class="slide" style="background-image: url('Images/Imageshero2.jpg.jfif');"></div>
+      <div class="slide" style="background-image: url('Images/Imageshero3.jpg.jfif');"></div>
+
+      <!-- Buttons -->
+      <button class="prev">&#10094;</button>
+      <button class="next">&#10095;</button>
+
+      <!-- Dots -->
+      <div class="controls">
+        <div class="dot active"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+    </div>
+
+    <div class="hero-content">
+      <h1>Discover Your Next Destination</h1>
+      <p>Explore breathtaking locations, exclusive tours, and memorable travel experiences with Annabloome Ventures.</p>
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <section id="about" class="about">
+    <img src="Images/About Us Image.jpg" alt="Images/About Us Image.jpg">
+    <div>
+      <h2>About Us</h2>
+      <p>Welcome to Annabloome Ventures, where every journey blooms into a beautiful story. We craft unique adventures — whether you seek nature, hidden towns, or cultural thrills. Travel with us means connection, growth, and inspiration.</p>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <h2 style="text-align:center; margin-bottom:40px;">Our Services</h2>
+    <div class="services">
+      <div>
+        <img src="Images/customize.jpeg.jpg" alt="Customized Tours">
+        <h3>Customized Tours</h3>
+        <p>Tailored trips built just for you, with flexible plans and private guides.</p>
+      </div>
+      <div>
+        <img src="Images/Hiking.jpg.jpg" alt="Adventure Packages">
+        <h3>Adventure Packages</h3>
+        <p>From hiking to skydiving, experience the thrill of a lifetime with us.</p>
+      </div>
+      <div>
+        <img src="Images/gateway.png.jpg" alt="Luxury Getaways">
+        <h3>Luxury Getaways</h3>
+        <p>Indulge in premium stays and high-end destinations, curated by our experts.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="feedback" class="testimonial-section">
+    <h2>What Our Travelers Say</h2>
+    <div class="testimonial">
+      <p>"Annabloome Ventures made my dream vacation come true! The itinerary was perfect and the service exceptional."</p>
+      <strong>- Sarah J.</strong>
+    </div>
+    <div class="testimonial">
+      <p>"Professional, friendly, and incredibly well-organized. I can't wait to book my next adventure with them."</p>
+      <strong>- Ahmed K.</strong>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <h2>Ready for Your Next Journey?</h2>
+    <p>Let us craft your perfect travel experience today.</p>
+    <a href="#services">Plan Your Trip</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 Annabloome Ventures. All rights reserved.</p>
+  </footer>
+
+  <!-- JAVASCRIPT SLIDER -->
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
+    const prevBtn = document.querySelector('.prev');
+    const nextBtn = document.querySelector('.next');
+    let index = 0;
+
+    function showSlide(i) {
+      slides.forEach((s, j) => {
+        s.classList.remove('active');
+        dots[j].classList.remove('active');
+      });
+      slides[i].classList.add('active');
+      dots[i].classList.add('active');
+    }
+
+    function nextSlide() {
+      index = (index + 1) % slides.length;
+      showSlide(index);
+    }
+
+    function prevSlide() {
+      index = (index - 1 + slides.length) % slides.length;
+      showSlide(index);
+    }
+
+    nextBtn.addEventListener('click', nextSlide);
+    prevBtn.addEventListener('click', prevSlide);
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => {
+        index = i;
+        showSlide(index);
+      });
+    });
+
+    setInterval(nextSlide, 5000); // Auto change every 5 seconds
+  </script>
+</body>
+</html>
